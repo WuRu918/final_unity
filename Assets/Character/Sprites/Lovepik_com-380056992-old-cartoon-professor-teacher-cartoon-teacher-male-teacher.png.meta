@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 13392b9cc6dbd49dda6a3e7f3627b5a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8075954438930477088
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_0
+  - first:
+      213: -6631203273740873714
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_1
+  - first:
+      213: 5573410403481105536
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_2
+  - first:
+      213: -2831235878309913003
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_3
+  - first:
+      213: -92410656308826016
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_4
+  - first:
+      213: -7501007883376312611
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_5
+  - first:
+      213: 8871651784501791163
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_6
+  - first:
+      213: -7642512629150305945
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_7
+  - first:
+      213: 6506590951715513817
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_8
+  - first:
+      213: -6510297949608801321
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_9
+  - first:
+      213: 1083821174266476446
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_10
+  - first:
+      213: 2821733479440457354
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_11
+  - first:
+      213: -1433122091619636388
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_12
+  - first:
+      213: 148481218891704639
+    second: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 124
+        width: 726
+        height: 1007
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 020b0b226cd831070800000000000000
+      internalID: 8075954438930477088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_1
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 40
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00944391cb39f3a0800000000000000
+      internalID: -6631203273740873714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_2
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 40
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08435f69b3bb85d40800000000000000
+      internalID: 5573410403481105536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_3
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 40
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e1ffd18fd65b8d0800000000000000
+      internalID: -2831235878309913003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 40
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06070496ff0b7bef0800000000000000
+      internalID: -92410656308826016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_5
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 35
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde33f5721117e790800000000000000
+      internalID: -7501007883376312611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_6
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb980324b407e1b70800000000000000
+      internalID: 8871651784501791163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_7
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 40
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7613f0c614750f590800000000000000
+      internalID: -7642512629150305945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_8
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 40
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d526c74ffd0c4a50800000000000000
+      internalID: 6506590951715513817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_9
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db0d930286c6a5a0800000000000000
+      internalID: -6510297949608801321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_10
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 35
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97333c9d918a0f00800000000000000
+      internalID: 1083821174266476446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_11
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 35
+        width: 39
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e10ec36afc82720800000000000000
+      internalID: 2821733479440457354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_12
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 34
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b2f39fc078c1ce0800000000000000
+      internalID: -1433122091619636388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lovepik_com-380056992-old-cartoon-professor-teacher-cartoon-teacher-male-teacher_13
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 40
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f396bd3c1e28f0200800000000000000
+      internalID: 148481218891704639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
