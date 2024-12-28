@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;  // 引入 SceneManager 命名空間
 using UnityEngine.EventSystems;  // 引入 EventSystems 用於觸發事件
 
-public class game_start : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class game_explaination : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public RectTransform buttonRectTransform;
     public Vector3 normalScale = new Vector3(1f, 1f, 1f);
