@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      yunpingfront_0: 6170209841281857028
+      yunpingfront_1: -703576064877134840
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

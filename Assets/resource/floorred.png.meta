@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      floorred_0: -1927766704583524454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
