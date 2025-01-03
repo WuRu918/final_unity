@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -309,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Peigeon Dead_0: -1493262650431868985
+      Peigeon Dead_1: 7025582282655347519
+      Peigeon Dead_2: -277809882396977741
+      Peigeon Dead_3: -2204970423698371829
+      Peigeon Dead_4: 5441092003596801135
+      Peigeon Dead_5: -4424165144619922805
+      Peigeon Dead_6: 2682611245499005896
+      Peigeon Dead_7: -6764375720101304815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

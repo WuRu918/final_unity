@@ -123,6 +123,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -359,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idel Animation 48x48_0: 1234850466534396885
+      Idel Animation 48x48_1: -4603718413170894697
+      Idel Animation 48x48_2: -1055979463963558519
+      Idel Animation 48x48_3: -1671385918788548960
+      Idel Animation 48x48_4: 4664262283584040536
+      Idel Animation 48x48_5: -5992892090904542931
+      Idel Animation 48x48_6: 6386435202083405834
+      Idel Animation 48x48_7: -5575259620138887894
+      Idel Animation 48x48_8: 4310173952616876695
+      Idel Animation 48x48_9: 8596610054982686144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
