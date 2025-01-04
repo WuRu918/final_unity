@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4560032847141842189}
   - component: {fileID: 2739743574428846173}
   - component: {fileID: 4998247632537756921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VanBounceRoll-Sheet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

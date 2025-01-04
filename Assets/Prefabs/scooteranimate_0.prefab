@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1656008391255071286}
   - component: {fileID: 6794480230964649616}
   - component: {fileID: 1690890098788722774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: scooteranimate_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
