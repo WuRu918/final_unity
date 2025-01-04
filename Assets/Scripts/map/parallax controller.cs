@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class parallaxcontroller : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class parallaxcontroller : MonoBehaviour
 
     float farthestBack;
 
-    [Range(0.01f, 0.05f)]
+    [Range(0.01f, 10)]
     public float parallaxSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,14 +50,16 @@ public class parallaxcontroller : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    void Update()
     {
         distance = cam.position.x - camStartPos.x;
         transform.position = new Vector3(cam.position.x, transform.position.y, 0);
-        for(int i = 0; i < backgrounds.Length; i++)
+
+        for (int i = 0; i < backgrounds.Length; i++)
         {
             float speed = backSpeed[i] * parallaxSpeed;
-            mat[i].SetTextureOffset("_MainTex", new Vector2(distance, 0)* speed);
+            mat[i].SetTextureOffset("_MainTex", new Vector2(distance, 0) * speed);
         }
     }
+
 }
