@@ -960,30 +960,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2004060284}
-        m_TargetAssemblyTypeName: game_explaination, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2004060286}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 383716509}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &383716506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,7 +1028,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383716503}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 64c7bcc3acc2047d58236bcbab16cff6, type: 3}
@@ -3206,9 +3182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edebddb50ff547388cecb78e5342d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonRectTransform: {fileID: 383716504}
-  normalScale: {x: 1, y: 1, z: 1}
-  enlargedScale: {x: 1.2, y: 1.2, z: 1}
+  audioSource: {fileID: 0}
 --- !u!4 &2004060285
 Transform:
   m_ObjectHideFlags: 0
