@@ -6,6 +6,8 @@ TagManager:
   tags:
   - TutorialRequirement
   - npc
+  - Bullet
+  - floor
   layers:
   - Default
   - TransparentFX
@@ -63,6 +65,9 @@ TagManager:
     locked: 0
   - name: Front
     uniqueID: 558261281
+    locked: 0
+  - name: UI
+    uniqueID: 1081218075
     locked: 0
   m_RenderingLayers:
   - Default
