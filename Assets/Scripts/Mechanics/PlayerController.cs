@@ -87,6 +87,10 @@ namespace Platformer.Mechanics
                     // 生成子彈
                     Instantiate(Bullet, spawnPosition, Quaternion.identity);
                     
+                    var audio = this.GetComponent<AudioSource>();
+                    // 播放音效
+                    audio.Play();
+                    
                 }
             }
             

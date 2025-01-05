@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ballloon : MonoBehaviour
+public class black : MonoBehaviour
 {
     public int hp = 0;
     public int hp_max = 0;
@@ -57,6 +57,4 @@ public class ballloon : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    
 }
