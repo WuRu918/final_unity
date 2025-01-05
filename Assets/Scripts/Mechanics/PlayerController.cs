@@ -5,6 +5,7 @@ using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
 using Platformer.Core;
+using UnityEngine.SceneManagement;
 
 namespace Platformer.Mechanics
 {
@@ -41,6 +42,7 @@ namespace Platformer.Mechanics
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
         public Bounds Bounds => collider2d.bounds;
+        public GameObject Bullet;
 
         void Awake()
         {
@@ -70,6 +72,24 @@ namespace Platformer.Mechanics
             }
             UpdateJumpState();
             base.Update();
+
+            //fire
+            if(SceneManager.GetActiveScene().name == "answer_question")
+            {
+                if(Input.GetKeyDown(KeyCode.X))
+                {
+                    // 獲取原始位置
+                    Vector3 spawnPosition = this.transform.position;
+
+                    // 調整 y 座標，讓生成的物體位置稍微往上一點
+                    spawnPosition.y += 1.0f; // 將 y 座標加 1.0f (你可以根據需求調整值)
+
+                    // 生成子彈
+                    Instantiate(Bullet, spawnPosition, Quaternion.identity);
+                    
+                }
+            }
+            
         }
 
         void UpdateJumpState()
