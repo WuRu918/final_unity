@@ -9,29 +9,19 @@ using UnityEngine.SceneManagement;
 
 namespace Platformer.Mechanics
 {
-    /// <summary>
-    /// This is the main class used to implement control of the player.
-    /// It is a superset of the AnimationController class, but is inlined to allow for any kind of customisation.
-    /// </summary>
     public class PlayerController : KinematicObject
     {
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
-        /// <summary>
-        /// Max horizontal speed of the player.
-        /// </summary>
         public float maxSpeed = 7;
-        /// <summary>
-        /// Initial jump velocity at the start of a jump.
-        /// </summary>
         public float jumpTakeOffSpeed = 20;
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
-        /*internal new*/ public Collider2D collider2d;
-        /*internal new*/ public AudioSource audioSource;
+        public Collider2D collider2d;
+        public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
 
@@ -43,6 +33,9 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
         public GameObject Bullet;
+
+        private Collider2D platformCollider;
+        private bool isInPlatform = false;
 
         void Awake()
         {
@@ -70,30 +63,12 @@ namespace Platformer.Mechanics
             {
                 move.x = 0;
             }
+
+            // 平台穿越邏輯
+            HandlePlatformPassThrough();
+
             UpdateJumpState();
             base.Update();
-
-            //fire
-            if(SceneManager.GetActiveScene().name == "answer_question")
-            {
-                if(Input.GetKeyDown(KeyCode.X))
-                {
-                    // 獲取原始位置
-                    Vector3 spawnPosition = this.transform.position;
-
-                    // 調整 y 座標，讓生成的物體位置稍微往上一點
-                    spawnPosition.y += 1.0f; // 將 y 座標加 1.0f (你可以根據需求調整值)
-
-                    // 生成子彈
-                    Instantiate(Bullet, spawnPosition, Quaternion.identity);
-                    
-                    var audio = this.GetComponent<AudioSource>();
-                    // 播放音效
-                    audio.Play();
-                    
-                }
-            }
-            
         }
 
         void UpdateJumpState()
@@ -150,6 +125,7 @@ namespace Platformer.Mechanics
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
+            // 確保角色可以在平台上移動
             targetVelocity = move * maxSpeed;
         }
 
@@ -163,11 +139,45 @@ namespace Platformer.Mechanics
         }
 
         void OnTriggerEnter2D(Collider2D coll)
-    {
-        if(coll.gameObject.tag == "npc")
-        {               
-            coll.gameObject.transform.GetComponent<npc_start>().ChangeScene();
+        {
+            if (coll.gameObject.tag == "npc")
+            {
+                coll.gameObject.transform.GetComponent<npc_start>().ChangeScene();
+            }
         }
-    }
+
+        void HandlePlatformPassThrough()
+        {
+            if (platformCollider != null)
+            {
+                Bounds platformBounds = platformCollider.bounds;
+                Vector3 playerFeetPosition = collider2d.bounds.min;
+
+                // 如果角色的腳部超過平台的上表面，且垂直速度向下，恢復碰撞
+                if (playerFeetPosition.y > platformBounds.max.y && velocity.y <= 0)
+                {
+                    Physics2D.IgnoreCollision(collider2d, platformCollider, false);
+                }
+            }
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("platform"))
+            {
+                platformCollider = collision.collider;
+
+                // 初始忽略碰撞，允許角色從下方穿過平台
+                Physics2D.IgnoreCollision(collider2d, platformCollider, true);
+            }
+        }
+
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("platform"))
+            {
+                platformCollider = null;
+            }
+        }
     }
 }
