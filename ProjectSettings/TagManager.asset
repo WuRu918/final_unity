@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - floor
   - platform
+  - bike
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Fore
   - Object
   - platform
-  - 
+  - npc
   - 
   - 
   - 

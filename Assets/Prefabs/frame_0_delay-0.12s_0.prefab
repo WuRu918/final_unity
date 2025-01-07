@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 7702638944859163673}
   - component: {fileID: 874519575072777502}
   - component: {fileID: 4012491193085254092}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: frame_0_delay-0.12s_0
-  m_TagString: Untagged
+  m_TagString: bike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

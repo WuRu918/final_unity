@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 4560032847141842189}
   - component: {fileID: 2739743574428846173}
   - component: {fileID: 4998247632537756921}
-  m_Layer: 7
+  - component: {fileID: 5307180867815961783}
+  m_Layer: 8
   m_Name: VanBounceRoll-Sheet_0
-  m_TagString: Untagged
+  m_TagString: bike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,3 +324,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   ouch: {fileID: 8300000, guid: be3d04e753a57ae4485a89bbe89f9957, type: 3}
+--- !u!114 &5307180867815961783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638405942636879218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be4f8f29c10864429c33db73cf4e102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  destroyBoundary: 20
+  fadeSpeed: 1

@@ -19,15 +19,30 @@ public class MoveObject : MonoBehaviour
         // 向右移動
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
-        // 如果物體超出範圍，開始變透明
-        if (transform.position.x > destroyBoundary)
+        if (speed > 0)
         {
-            if (!isFading)
+            if (transform.position.x > destroyBoundary)
             {
-                isFading = true;
-                StartCoroutine(FadeOut()); // 開始透明過渡
+                if (!isFading)
+                {
+                    isFading = true;
+                    StartCoroutine(FadeOut()); // 開始透明過渡
+                }
             }
         }
+        else
+        {
+            if (transform.position.x < destroyBoundary)
+            {
+                if (!isFading)
+                {
+                    isFading = true;
+                    StartCoroutine(FadeOut()); // 開始透明過渡
+                }
+            }
+        }
+        // 如果物體超出範圍，開始變透明
+        
     }
 
     // 漸變透明度的協程
