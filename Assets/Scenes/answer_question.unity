@@ -4100,6 +4100,7 @@ GameObject:
   - component: {fileID: 1966302539}
   - component: {fileID: 1966302541}
   - component: {fileID: 1966302542}
+  - component: {fileID: 1966302543}
   m_Layer: 0
   m_Name: skyback_0
   m_TagString: Untagged
@@ -4384,13 +4385,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a451e4a03f24186bb1812327077e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionImage: {fileID: 0}
-  questionSprites:
-  - {fileID: 0}
+--- !u!114 &1966302543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966302536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3568366a8de4f18b0c4355d42fc5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionObjects:
+  - {fileID: 889355668}
+  - {fileID: 817516049}
   currentQuestionIndex: 0
   score: 0
-  balloons: []
-  countdownText: {fileID: 0}
+  balloons:
+  - {fileID: 1233591357}
+  - {fileID: 754124120}
+  - {fileID: 1284149715}
+  countdownText: {fileID: 728114387}
   countdownTime: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
