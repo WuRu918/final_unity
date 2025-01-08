@@ -11,19 +11,21 @@ public class result : MonoBehaviour
     {
         if (CoinManager.currentGoldCoins > 20)
         {
-            award = "§A¦³¿ú¥i¥H¦Y¤jÀ\~";
+            //award = "ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½iï¿½Hï¿½Yï¿½jï¿½\~";
+            award = "Y";
         }
         else
         {
-            award = "¨S¿ú¦Y¶º¤FQQ";
+            //award = "ï¿½Sï¿½ï¿½ï¿½Yï¿½ï¿½ï¿½FQQ";
+            award = "Y";
         }
-        result_text.text = "§A®³¨ì" + CoinManager.currentGoldCoins.ToString() + "­Óª÷¹ô"+Environment.NewLine+award;
+        result_text.text = "ï¿½Aï¿½ï¿½ï¿½ï¿½" + CoinManager.currentGoldCoins.ToString() + "ï¿½Óªï¿½ï¿½ï¿½"+Environment.NewLine+award;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        result_text.text = "§A®³¨ì" + CoinManager.currentGoldCoins.ToString() + "­Óª÷¹ô" + Environment.NewLine + award;
+        result_text.text = "ï¿½Aï¿½ï¿½ï¿½ï¿½" + CoinManager.currentGoldCoins.ToString() + "ï¿½Óªï¿½ï¿½ï¿½" + Environment.NewLine + award;
     }
 }
