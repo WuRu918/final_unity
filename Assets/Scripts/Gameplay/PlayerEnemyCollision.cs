@@ -31,22 +31,26 @@ namespace Platformer.Gameplay
                     if (!enemyHealth.IsAlive)
                     {
                         Schedule<EnemyDeath>().enemy = enemy;
+                        CoinManager.currentGoldCoins++;
                         player.Bounce(2);
                     }
                     else
                     {
                         player.Bounce(7);
+                        CoinManager.currentGoldCoins--;
                     }
                 }
                 else
                 {
                     Schedule<EnemyDeath>().enemy = enemy;
+                    CoinManager.currentGoldCoins++;
                     player.Bounce(2);
                 }
             }
             else
             {
                 Schedule<PlayerDeath>();
+                CoinManager.currentGoldCoins--;
             }
         }
     }
