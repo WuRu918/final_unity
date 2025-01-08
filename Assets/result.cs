@@ -11,21 +11,21 @@ public class result : MonoBehaviour
     {
         if (CoinManager.currentGoldCoins > 20)
         {
-            //award = "�A�����i�H�Y�j�\~";
-            award = "Y";
+            
+            award = "You can have a great meal";
         }
         else
         {
-            //award = "�S���Y���FQQ";
-            award = "Y";
+            
+            award = "You don't have enough money...";
         }
-        result_text.text = "�A����" + CoinManager.currentGoldCoins.ToString() + "�Ӫ���"+Environment.NewLine+award;
+        result_text.text = "you have " + CoinManager.currentGoldCoins.ToString() + " coins"+Environment.NewLine+award;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        result_text.text = "�A����" + CoinManager.currentGoldCoins.ToString() + "�Ӫ���" + Environment.NewLine + award;
+        
     }
 }
