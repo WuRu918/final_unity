@@ -38,9 +38,10 @@ public class npc_start : MonoBehaviour
         fs.SetupDialog();
         fs.ReadTextFromResource("npc");
 
+
         // 註冊自定義指令
         fs.RegisterCommand("load_scene", (List<string> _params) => {
-            fs.StartCoroutine(WaitForShiftAndLoadScene(_params[0]));                         
+            fs.StartCoroutine(WaitForShiftAndLoadScene(_params[0]));
         });
     }
     
