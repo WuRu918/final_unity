@@ -37,7 +37,10 @@ namespace Platformer.Gameplay
                     else
                     {
                         player.Bounce(7);
-                        CoinManager.currentGoldCoins--;
+                        if(CoinManager.currentGoldCoins > 0)
+                        {
+                            CoinManager.currentGoldCoins--;
+                        }
                     }
                 }
                 else
@@ -49,8 +52,11 @@ namespace Platformer.Gameplay
             }
             else
             {
-                Schedule<PlayerDeath>();
-                CoinManager.currentGoldCoins--;
+                Schedule<PlayerDeath>(); 
+                if (CoinManager.currentGoldCoins > 0)
+                {
+                    CoinManager.currentGoldCoins--;
+                }
             }
         }
     }
