@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - TutorialRequirement
+  - npc
+  - Bullet
+  - floor
+>>>>>>> parent of b573bfd (問答畫面)
   layers:
   - Default
   - TransparentFX
