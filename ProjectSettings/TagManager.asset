@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - TutorialRequirement
-  - npc
-  - Bullet
-  - floor
-  - orange
-  - pink
-  - black
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Postprocessing
-  - Fore
-  - Object
-  - Fore2
-  - Fore3
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -48,36 +41,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: sky
-    uniqueID: 564986123
-    locked: 0
-  - name: Scene
-    uniqueID: 3294563255
-    locked: 0
-  - name: behindBack
-    uniqueID: 2930784021
-    locked: 0
-  - name: Back
-    uniqueID: 4098897839
-    locked: 0
-  - name: Object
-    uniqueID: 2119079431
-    locked: 0
-  - name: Fore
-    uniqueID: 2363549845
-    locked: 0
-  - name: Front
-    uniqueID: 558261281
-    locked: 0
-  - name: UI
-    uniqueID: 1081218075
-    locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
