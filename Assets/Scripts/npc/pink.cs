@@ -15,17 +15,23 @@ public class pink : MonoBehaviour
 
     void Start()
     {
-        // 隨機生成 x 位置
-        float randomX = Random.Range(-7.85f, 2.24f);
-        hp_max = 2; // 設置最大血量
-        hp = hp_max; // 初始化當前血量
-        
-        // 設置新位置
-        this.transform.position = new Vector3(randomX, 6.22f, this.transform.position.z);
-        rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Static;
+        InitializeBalloon();
         
     }
+
+
+    // 初始化、重置氣球狀態
+    public void ResetBalloon()
+    {
+        InitializeBalloon();
+    }
+
+    public int GetHP()
+    {
+        return hp;
+    }
+
+
 
     void Update()
     {
@@ -64,6 +70,26 @@ public class pink : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void InitializeBalloon()
+    {
+        //隨機生成
+        float randomX = Random.Range(-7.85f, 1.70f);
+        this.transform.position = new Vector3(randomX, 6.22f, this.transform.position.z);
+
+        hp_max = 2; // 氣球最大血量
+        hp = hp_max; // 初始血量
+
+        //重置氣球血條
+        if (blood != null)
+        {
+            blood.transform.localScale = new Vector3(1, blood.transform.localScale.y, blood.transform.localScale.z);
+        }
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Static;
+        canPlay = false;
+    }   
 
     
 }
