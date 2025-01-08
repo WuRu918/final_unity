@@ -1144,8 +1144,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 500
-  m_fontSizeBase: 500
+  m_fontSize: 400
+  m_fontSizeBase: 400
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1351,6 +1351,7 @@ MonoBehaviour:
   hp: 0
   hp_max: 0
   blood: {fileID: 1287316188}
+  blood_base: {fileID: 166126460}
   bulloonAni: {fileID: 754124121}
   canPlay: 0
 --- !u!61 &754124123
@@ -2118,6 +2119,7 @@ MonoBehaviour:
   hp: 0
   hp_max: 0
   blood: {fileID: 1258864975}
+  blood_base: {fileID: 637026501}
   bulloonAni: {fileID: 1233591358}
   canPlay: 0
 --- !u!61 &1233591363
@@ -2410,6 +2412,7 @@ MonoBehaviour:
   hp: 0
   hp_max: 0
   blood: {fileID: 919187455}
+  blood_base: {fileID: 1454877195}
   bulloonAni: {fileID: 1284149716}
   canPlay: 0
 --- !u!50 &1284149718
@@ -4099,7 +4102,6 @@ GameObject:
   - component: {fileID: 1966302537}
   - component: {fileID: 1966302539}
   - component: {fileID: 1966302541}
-  - component: {fileID: 1966302542}
   - component: {fileID: 1966302543}
   m_Layer: 0
   m_Name: skyback_0
@@ -4373,18 +4375,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1966302542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966302536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6a451e4a03f24186bb1812327077e29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1966302543
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class gamecontroller: MonoBehaviour
             yield return StartCoroutine(StartCountdown());
 
             // 等待玩家射擊時間
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(12f);
 
             // 檢查是否射中
             CheckResult();
@@ -111,36 +111,95 @@ public class gamecontroller: MonoBehaviour
 
     void EnableBalloonMovement()
     {
+        // 遍歷所有氣球
         foreach (var balloon in balloons)
         {
             if (balloon == null) continue;
-            var resettable = balloon.GetComponent<IResettable>();
-            if (resettable != null)
+
+            // 嘗試分別獲取每個氣球上掛載的腳本
+            var ballloonScript = balloon.GetComponent<ballloon>();
+            var pinkScript = balloon.GetComponent<pink>();
+            var blackScript = balloon.GetComponent<black>();
+
+            // 如果有對應的腳本，設置 canPlay 為 true
+            if (ballloonScript != null)
             {
-                ((MonoBehaviour)resettable).GetComponent<black>().canPlay = true; // 設置下落啟用
-                print("Balloon: " + balloon.name + " canPlay value: " + ((MonoBehaviour)resettable).GetComponent<black>().canPlay); // 打印氣球的canPlay值
+                ballloonScript.canPlay = true;
+                print("Balloon with ballloon script canPlay: " + ballloonScript.canPlay);
+            }
+
+            if (pinkScript != null)
+            {
+                pinkScript.canPlay = true;
+                print("Balloon with pink script canPlay: " + pinkScript.canPlay);
+            }
+
+            if (blackScript != null)
+            {
+                blackScript.canPlay = true;
+                print("Balloon with black script canPlay: " + blackScript.canPlay);
+            }
+
+            // 嘗試獲取 Rigidbody2D 組件並設置為 Dynamic
+            var rb = balloon.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+            }
+            else
+            {
+                print("Rigidbody2D is missing on: " + balloon.name);
+            }
+
+            // 恢復氣球顯示
+            Renderer renderer = balloon.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = true;  // 顯示物體
+            }
+
+            // 恢復物理和碰撞
+            Rigidbody2D balloonRb = balloon.GetComponent<Rigidbody2D>();
+            if (balloonRb != null)
+            {
+                balloonRb.simulated = true; // 恢復物理運算
+            }
+
+            Collider2D collider = balloon.GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = true;  // 恢復碰撞檢測
             }
         }
     }
 
     void CheckResult()
+{
+    foreach (var balloon in balloons)
     {
-        foreach (var balloon in balloons)
+        if (balloon == null)
         {
-            if (balloon == null) continue;
-
-            var resettable = balloon.GetComponent<IResettable>();
-            if (resettable != null && resettable.GetHP() <= 0) // 如果氣球被擊中
-            {
-                if (IsCorrectAnswer(balloon))
-                {
-                    score += 1;
-                }
-            }
+            Debug.LogError("Balloon is null");
+            continue;
         }
 
-        Debug.Log("Current Score: " + score);
+        var resettable = balloon.GetComponent<IResettable>();
+        if (resettable == null)
+        {
+            Debug.LogError("IResettable component is missing on: " + balloon.name);
+            continue;
+        }
+
+        if (resettable.GetHP() <= 0) // 如果氣球被擊中並且血量小於 0
+        {
+            if (IsCorrectAnswer(balloon))
+            {
+                score += 1;
+                Debug.Log("Score increased. Current Score: " + score);
+            }
+        }
     }
+}
 
     bool IsCorrectAnswer(GameObject balloon)
     {
