@@ -168,6 +168,7 @@ namespace Platformer.Mechanics
         {               
             coll.gameObject.transform.GetComponent<npc_start>().ChangeScene();
         }
-    }
+        
+        }
     }
 }
