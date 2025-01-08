@@ -15,7 +15,7 @@ public class result : MonoBehaviour
         }
         else
         {
-            award = "你沒錢吃飯了QQ";
+            award = "沒錢吃飯了QQ";
         }
         result_text.text = "你拿到" + CoinManager.currentGoldCoins.ToString() + "個金幣"+Environment.NewLine+award;
         
@@ -24,6 +24,6 @@ public class result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        result_text.text = "你拿到" + CoinManager.currentGoldCoins.ToString() + "個金幣" + Environment.NewLine + award;
     }
 }
