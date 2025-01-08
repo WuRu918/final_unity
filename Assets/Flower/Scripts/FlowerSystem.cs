@@ -162,7 +162,7 @@ namespace Flower{
         #region Public Function
         public void RegisterCommand(string _str, CharFunction _charFunction)
         {
-              specialCharFuncMap.Add(_str, _charFunction);
+            specialCharFuncMap.Add(_str, _charFunction);
         }
         public void RegisterEffect(string effectName, EffectFunction effectFunction){
             effectMap.Add(effectName, effectFunction);

@@ -8,8 +8,6 @@ TagManager:
   - npc
   - Bullet
   - floor
-  - coin
-  - flag
   - orange
   - pink
   - black
