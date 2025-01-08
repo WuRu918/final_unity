@@ -11,10 +11,12 @@ public class gamecontroller: MonoBehaviour
     public GameObject[] balloons; // 拖入所有氣球的 prefab
 
     public TMP_Text countdownText; // 倒数文字
+    private Vector3 countdownPosition;
     public int countdownTime = 3; // 倒数秒数
 
     void Start()
     {
+        countdownPosition = countdownText.transform.position;
         StartCoroutine(GameLoop());
     }
 
@@ -48,18 +50,24 @@ public class gamecontroller: MonoBehaviour
     private IEnumerator StartCountdown()
     {
         countdownText.fontSize = 380;
+        countdownText.transform.position = new Vector3(countdownPosition.x-200f,countdownPosition.y,countdownPosition.z);
         countdownText.text = "Ready!";
         yield return new WaitForSeconds(1f);
 
+        
+        float x = this.transform.position.x;
         // 倒數計時
         while (countdownTime > 0)
         {
+            countdownText.transform.position = new Vector3(countdownPosition.x,countdownPosition.y,countdownPosition.z);         
             countdownText.fontSize = 500;
             countdownText.text = countdownTime.ToString();
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
 
+        countdownText.transform.position = new Vector3(countdownPosition.x-200f,countdownPosition.y,countdownPosition.z);
+        countdownText.fontSize = 380;
         countdownText.text = "Go!";
         yield return new WaitForSeconds(1f);
 
@@ -110,6 +118,7 @@ public class gamecontroller: MonoBehaviour
             if (resettable != null)
             {
                 ((MonoBehaviour)resettable).GetComponent<black>().canPlay = true; // 設置下落啟用
+                print("Balloon: " + balloon.name + " canPlay value: " + ((MonoBehaviour)resettable).GetComponent<black>().canPlay); // 打印氣球的canPlay值
             }
         }
     }
