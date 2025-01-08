@@ -8,9 +8,6 @@ TagManager:
   - npc
   - Bullet
   - floor
-  - orange
-  - pink
-  - black
   layers:
   - Default
   - TransparentFX
