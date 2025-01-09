@@ -34,7 +34,6 @@ public class npc2 : MonoBehaviour
         // 隐藏所有按钮
         foreach (var buttonObject in button)
         {
-            buttonObject.text = "";
             buttonObject.SetActive(false);
         }
         
@@ -63,11 +62,11 @@ public class npc2 : MonoBehaviour
                 break; // 结束游戏循环
             }
 
-            // 更新题目
-            UpdateQuestionObject();
-
             // 倒计时
             yield return StartCoroutine(StartCountdown());
+            question.text = "";
+            // 更新题目
+            UpdateQuestionObject();
             currentQuestionIndex++;
         }
     }
@@ -85,7 +84,7 @@ public class npc2 : MonoBehaviour
 
             // 只显示当前的题目
             questionObjects[currentQuestionIndex].SetActive(true);
-            questionObjects[currentQuestionIndex].transform.position = new Vector3(-37f,-66.916f,0);
+            questionObjects[currentQuestionIndex].transform.position = new Vector3(1200f,1300f,0);
         }
         else
         {
