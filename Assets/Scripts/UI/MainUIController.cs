@@ -11,6 +11,7 @@ namespace Platformer.UI
     {
         public GameObject[] panels;
 
+
         public void SetActivePanel(int index)
         {
             for (var i = 0; i < panels.Length; i++)

@@ -12,6 +12,7 @@ public class question_new: MonoBehaviour
 
 
 
+
     void Start()
     {
         this.transform.tag = "npc";       
@@ -33,6 +34,7 @@ public class question_new: MonoBehaviour
             {        
                 // 場景加載
                 SceneManager.LoadScene("answer_question");
+
 
             }          
         }

@@ -17,6 +17,7 @@ public class control : MonoBehaviour
     public int countdownTime = 3; // 秒數
     public GameObject door;
     bool next = true;
+    public int pointnumber;
 
     void Start()
     {
@@ -99,12 +100,16 @@ public class control : MonoBehaviour
         }
     }
 
+    public GameObject playerObject;
     // 碰到門就可以離開
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("door"))
         {
             SceneManager.LoadScene("SampleScene");
+            GameObject g = GameObject.Find(pointnumber.ToString()) as GameObject;
+            playerObject = GameObject.Find("Player (1)");
+            playerObject.transform.position = g.transform.position;
         }
     }
 
@@ -205,6 +210,7 @@ public class control : MonoBehaviour
                 {
                     countdownText.text = "Correct!";
                     score++;
+                    CoinManager.currentGoldCoins += 2;
                 }
                 else
                 {
