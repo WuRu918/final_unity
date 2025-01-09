@@ -1,0 +1,6 @@
+[show]
+在此處按下shift[r]
+可回答問題賺金幣[r]
+[wait,1000]
+[load_scene,scene2]
+[hide]

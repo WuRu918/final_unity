@@ -163,11 +163,11 @@ namespace Platformer.Mechanics
         }
 
         void OnTriggerEnter2D(Collider2D coll)
-    {
-        if(coll.gameObject.tag == "npc")
-        {               
-            coll.gameObject.transform.GetComponent<npc_start>().ChangeScene();
-        }
+        {
+            if(coll.gameObject.tag == "npc")
+            {               
+                coll.gameObject.transform.GetComponent<npc_start>().ChangeScene();
+            }
         
         }
     }
