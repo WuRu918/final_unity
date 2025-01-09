@@ -11,12 +11,18 @@ public class pink : MonoBehaviour
     public Animator bulloonAni;
     public bool canPlay = false;
     private Rigidbody2D rb; // 參考 Rigidbody2D 組件
+    private gamecontroller gameScript;
     
 
 
     void Start()
     {
         InitializeBalloon();
+        gameScript = Object.FindFirstObjectByType<gamecontroller>();
+        if (gameScript == null)
+        {
+            Debug.LogError("game script not found in the scene!");
+        }
         
     }
 
@@ -53,6 +59,12 @@ public class pink : MonoBehaviour
             float percent = (float)hp / (float)hp_max;
             float clampedPercent = Mathf.Max(percent, 0f);  // 確保血條百分比不會小於 0
             blood.transform.localScale = new Vector3(clampedPercent, blood.transform.localScale.y, blood.transform.localScale.z);
+            
+            // 扣血就檢查一次
+            if (gameScript != null)
+            {
+                gameScript.CheckResult();
+            }
         }
 
 
@@ -94,7 +106,7 @@ public class pink : MonoBehaviour
         canPlay = false;
     }   
 
-    void HideBalloon()
+    public void HideBalloon()
     {
         // 隱藏氣球的 Renderer 使其不可見
         Renderer balloonRenderer = GetComponent<Renderer>();

@@ -11,6 +11,7 @@ public class black : MonoBehaviour, IResettable
     public Animator bulloonAni;
     public bool canPlay = false;
     private Rigidbody2D rb; // 參考 Rigidbody2D 組件
+    private gamecontroller gameScript;
     
     
     void Start()
@@ -49,6 +50,11 @@ public class black : MonoBehaviour, IResettable
             float percent = (float)hp / (float)hp_max;
             float clampedPercent = Mathf.Max(percent, 0f);  // 確保血條百分比不會小於 0
             blood.transform.localScale = new Vector3(clampedPercent, blood.transform.localScale.y, blood.transform.localScale.z);
+            // 扣血就檢查一次
+            if (gameScript != null)
+            {
+                gameScript.CheckResult();
+            }
         }
 
 
@@ -92,7 +98,7 @@ public class black : MonoBehaviour, IResettable
         canPlay = false;
     }   
 
-    void HideBalloon()
+    public void HideBalloon()
     {
         // 隱藏氣球的 Renderer 使其不可見
         Renderer balloonRenderer = GetComponent<Renderer>();

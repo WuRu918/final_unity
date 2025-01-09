@@ -1,127 +1,157 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI; // for Image component
 using TMPro; // for TMP_Text
 
-public class gamecontroller: MonoBehaviour
+public class gamecontroller : MonoBehaviour
 {
-    public GameObject[] questionObjects; // 存放所有題目的 GameObject（每個題目對應一個 GameObject）
-    public int currentQuestionIndex = 0; // 目前題目的索引
+    public GameObject[] questionObjects; // 存放所有题目的 GameObject（每个题目对应一个 GameObject）
+    public int currentQuestionIndex = 0; // 当前题目的索引
     public int score = 0; // 分数
-    public GameObject[] balloons; // 拖入所有氣球的 prefab
+    public GameObject[] balloons; // 拖入所有气球的 prefab
 
-    public TMP_Text countdownText; // 倒数文字
+    public TMP_Text countdownText; // 倒计时文字
     private Vector3 countdownPosition;
-    public int countdownTime = 3; // 倒数秒数
+    public int countdownTime = 3; // 倒计时秒数
 
     void Start()
     {
+        // 隐藏所有照片（GameObject）
+        foreach (var question in questionObjects)
+        {
+            question.SetActive(false);
+        }
+
+        // 显示第一个题目
+        if (questionObjects.Length > 0)
+        {
+            questionObjects[0].SetActive(true);
+        }
+
         countdownPosition = countdownText.transform.position;
         StartCoroutine(GameLoop());
     }
 
     IEnumerator GameLoop()
+{
+    while (true)
     {
-        while (true)
+        // 如果题目索引超出范围，表示游戏结束
+        if (currentQuestionIndex >= questionObjects.Length)
         {
-            // 如果題目索引超出範圍，表示遊戲結束
-            if (currentQuestionIndex >= questionObjects.Length)
-            {
-                countdownText.text = "Game Over!";
-                yield return new WaitForSeconds(3f);
-                Debug.Log("遊戲結束，最終分數: " + score);
-                break; // 結束遊戲迴圈
-            }
-
-            // 重置氣球
-            ResetBalloons();
-
-            // 倒數計時
-            yield return StartCoroutine(StartCountdown());
-
-            // 等待玩家射擊時間
-            yield return new WaitForSeconds(12f);
-
-            // 檢查是否射中
-            CheckResult();
+            countdownText.text = "Game Over!";
+            yield return new WaitForSeconds(3f);
+            Debug.Log("游戏结束，最终分数: " + score);
+            break; // 结束游戏循环
         }
+
+        // 重置气球
+        ResetBalloons();
+
+        // 倒计时
+        yield return StartCoroutine(StartCountdown());
+
+        // 显示当前题目
+        UpdateQuestionObject();
+
+        // 启动气球下落
+        EnableBalloonMovement();
+
+        // 等待玩家结算分数并确保所有气球都被隐藏
+        yield return new WaitUntil(() => AreAllBalloonsHidden());
+
+        // 等待玩家确认后继续游戏
+        yield return new WaitForSeconds(1f);
+
+        // 进入下一题
+        currentQuestionIndex++;  // 切换到下一题
     }
+}
 
     private IEnumerator StartCountdown()
     {
         countdownText.fontSize = 380;
-        countdownText.transform.position = new Vector3(countdownPosition.x-200f,countdownPosition.y,countdownPosition.z);
+        countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
         countdownText.text = "Ready!";
         yield return new WaitForSeconds(1f);
 
-        
-        float x = this.transform.position.x;
-        // 倒數計時
+        // 倒计时
         while (countdownTime > 0)
         {
-            countdownText.transform.position = new Vector3(countdownPosition.x,countdownPosition.y,countdownPosition.z);         
+            countdownText.transform.position = new Vector3(countdownPosition.x, countdownPosition.y, countdownPosition.z);         
             countdownText.fontSize = 500;
             countdownText.text = countdownTime.ToString();
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
 
-        countdownText.transform.position = new Vector3(countdownPosition.x-200f,countdownPosition.y,countdownPosition.z);
+        countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
         countdownText.fontSize = 380;
         countdownText.text = "Go!";
         yield return new WaitForSeconds(1f);
 
-        // 清空倒數文字
+        // 清空倒计时文字
         countdownText.text = "";
 
-        // **按順序顯示題目圖片**
+        // **按顺序显示题目图片**
         UpdateQuestionObject();
-    
-        // 啟動氣球下落
+
+        // 更新索引，准备进入下一题
+        /*if (currentQuestionIndex < questionObjects.Length - 1)
+        {
+            currentQuestionIndex++;  // 只有在正确显示题目后才增加
+        }
+        */
+
+        // 启动气球下落
         EnableBalloonMovement();
-     
     }
 
     void UpdateQuestionObject()
     {
-        // 確保上一題的 GameObject 隱藏
-        if (currentQuestionIndex > 0 && currentQuestionIndex - 1 < questionObjects.Length)
+        // 确保当前的题目显示，其他题目隐藏
+        if (currentQuestionIndex >= 0 && currentQuestionIndex < questionObjects.Length)
         {
-            questionObjects[currentQuestionIndex - 1].SetActive(false);
+            // 隐藏所有题目
+            foreach (var question in questionObjects)
+            {
+                question.SetActive(false);
+            }
+
+            // 只显示当前的题目
+            questionObjects[currentQuestionIndex].SetActive(true);
         }
-
-        // 顯示當前題目的 GameObject
-        questionObjects[currentQuestionIndex].SetActive(true);
-
-        // 更新索引
-        currentQuestionIndex++;
+        else
+        {
+            Debug.LogWarning("No more questions to display or invalid index.");
+        }
     }
+
     void ResetBalloons()
     {
         foreach (var balloon in balloons)
         {
-            if (balloon == null) continue; // 確保氣球實例存在
+            if (balloon == null) continue; // 确保气球实例存在
             var resettable = balloon.GetComponent<IResettable>();
             if (resettable != null)
             {
-                resettable.ResetBalloon(); // 重置氣球位置和狀態
+                resettable.ResetBalloon(); // 重置气球位置和状态
             }
         }
     }
 
     void EnableBalloonMovement()
     {
-        // 遍歷所有氣球
+        // 所有气球
         foreach (var balloon in balloons)
         {
             if (balloon == null) continue;
 
-            // 嘗試分別獲取每個氣球上掛載的腳本
+            // 气球脚本
             var ballloonScript = balloon.GetComponent<ballloon>();
             var pinkScript = balloon.GetComponent<pink>();
             var blackScript = balloon.GetComponent<black>();
 
-            // 如果有對應的腳本，設置 canPlay 為 true
+            // canPlay ＝ true
             if (ballloonScript != null)
             {
                 ballloonScript.canPlay = true;
@@ -140,7 +170,7 @@ public class gamecontroller: MonoBehaviour
                 print("Balloon with black script canPlay: " + blackScript.canPlay);
             }
 
-            // 嘗試獲取 Rigidbody2D 組件並設置為 Dynamic
+            // Rigidbody2D ＝ Dynamic
             var rb = balloon.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
@@ -151,63 +181,134 @@ public class gamecontroller: MonoBehaviour
                 print("Rigidbody2D is missing on: " + balloon.name);
             }
 
-            // 恢復氣球顯示
+            // 显示气球
             Renderer renderer = balloon.GetComponent<Renderer>();
             if (renderer != null)
             {
-                renderer.enabled = true;  // 顯示物體
+                renderer.enabled = true;  
             }
 
-            // 恢復物理和碰撞
+            // 恢复物理和碰撞
             Rigidbody2D balloonRb = balloon.GetComponent<Rigidbody2D>();
             if (balloonRb != null)
             {
-                balloonRb.simulated = true; // 恢復物理運算
+                balloonRb.simulated = true; 
             }
 
             Collider2D collider = balloon.GetComponent<Collider2D>();
             if (collider != null)
             {
-                collider.enabled = true;  // 恢復碰撞檢測
+                collider.enabled = true;  
             }
         }
     }
 
-    void CheckResult()
-{
-    foreach (var balloon in balloons)
+    public void CheckResult()
     {
-        if (balloon == null)
-        {
-            Debug.LogError("Balloon is null");
-            continue;
-        }
+        bool allBalloonsHidden = true;
 
-        var resettable = balloon.GetComponent<IResettable>();
-        if (resettable == null)
+        foreach (var balloon in balloons)
         {
-            Debug.LogError("IResettable component is missing on: " + balloon.name);
-            continue;
-        }
-
-        if (resettable.GetHP() <= 0) // 如果氣球被擊中並且血量小於 0
-        {
-            if (IsCorrectAnswer(balloon))
+            if (balloon == null)
             {
-                score += 1;
-                Debug.Log("Score increased. Current Score: " + score);
+                Debug.LogError("Balloon is null");
+                continue;
+            }
+
+            var pinkScript = balloon.GetComponent<pink>();
+            var blackScript = balloon.GetComponent<black>();
+            var ballloonScript = balloon.GetComponent<ballloon>();
+
+            int hp = -1;
+
+            // 获取气球的HP
+            if (pinkScript != null)
+            {
+                hp = pinkScript.GetHP();
+            }
+            else if (blackScript != null)
+            {
+                hp = blackScript.GetHP();
+            }
+            else if (ballloonScript != null)
+            {
+                hp = ballloonScript.GetHP();
+            }
+            else
+            {
+                Debug.LogError("Unknown balloon type: " + balloon.name);
+                continue;
+            }
+
+            // 判断是否击中
+            if (hp <= 0) // 如果气球血量为0或以下
+            {
+                // 判断是否答对
+                if (IsCorrectAnswer(balloon))
+                {
+                    score += 1;
+                    countdownText.text = "Correct!";
+                    Debug.Log("Score increased. Current Score: " + score);
+                }
+                else
+                {
+                    countdownText.text = "Wrong!";
+                }
+
+                // 隐藏气球
+                if (pinkScript != null)
+                {
+                    pinkScript.HideBalloon();
+                }
+                if (blackScript != null)
+                {
+                    blackScript.HideBalloon();
+                }
+                if (ballloonScript != null)
+                {
+                    ballloonScript.HideBalloon();
+                }
+            }
+
+            // 如果气球未被隐藏，设置标志为 false
+            if (!balloon.GetComponent<Renderer>().isVisible)
+            {
+                allBalloonsHidden = false;
             }
         }
+
+        // 如果所有气球都已经隐藏，可以进行下一题
+        if (allBalloonsHidden)
+        {
+            StartCoroutine(GameLoop());
+        }
     }
-}
 
     bool IsCorrectAnswer(GameObject balloon)
     {
-        // 獲取當前題目的 GameObject 的 tag
-        string questionTag = questionObjects[currentQuestionIndex - 1].tag;
-        // 得到氣球標籤
+        if (currentQuestionIndex < 0 || currentQuestionIndex >= questionObjects.Length)
+        {
+            Debug.LogError("Invalid question index: " + currentQuestionIndex);
+            return false;
+        }
+
+        // 获取当前题目的 GameObject 的 tag
+        string questionTag = questionObjects[currentQuestionIndex].tag;
+        // 得到气球标签
         string balloonTag = balloon.tag;
-        // 比較題目tag跟被射掉的氣球tag
+        // 比较题目tag和被射掉的气球tag
         return questionTag == balloonTag;
+    }
+
+    bool AreAllBalloonsHidden()
+    {
+        foreach (var balloon in balloons)
+        {
+            if (balloon != null && balloon.GetComponent<Renderer>().isVisible)
+            {
+                return false; // 如果有气球仍然可见，返回 false
+            }
+        }
+        return true; // 所有气球都已隐藏，返回 true
     }
 }
