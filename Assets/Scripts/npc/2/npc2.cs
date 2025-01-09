@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro; // for TMP_Text
 using UnityEngine.UI;  // for Button and Image
 using System;
+using Platformer.Mechanics; 
 
 public class npc2 : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class npc2 : MonoBehaviour
     public Sprite[] buttonImages1; // 存储所有按钮图片，根据题目序号设置
     public Sprite[] buttonImages2; // 存储所有按钮图片，根据题目序号设置
     public Sprite[] buttonImages3; // 存储所有按钮图片，根据题目序号设置
+    public PlayerController playerController;
 
     //scene
     public GameObject door;
@@ -28,6 +30,9 @@ public class npc2 : MonoBehaviour
 
     void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
+        playerController.maxSpeed= 0; 
+
         //question.text = "Select the correct option to earn coins (2 coins per question)";
         countdownText.fontSize = 100;
         countdownText.text = "Ready!";
@@ -53,7 +58,7 @@ public class npc2 : MonoBehaviour
 
     IEnumerator DelayedStart()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         // 开始游戏循环
         StartCoroutine(GameLoop());
@@ -61,22 +66,27 @@ public class npc2 : MonoBehaviour
 
     IEnumerator GameLoop()
     {
-        while (currentQuestionIndex < questionObjects.Length)
+        while (currentQuestionIndex <= questionObjects.Length)
         {
+
+            // 倒计时
+            yield return StartCoroutine(StartCountdown());
+
             // 如果题目索引超出范围，表示游戏结束
             if (currentQuestionIndex >= questionObjects.Length)
             {
+                playerController.maxSpeed = 3; 
                 // 隐藏所有题目
-            foreach (var questionObject in questionObjects)
-            {
-                questionObject.SetActive(false);
-            }
+                foreach (var questionObject in questionObjects)
+                {
+                    questionObject.SetActive(false);
+                }
 
-            // 隐藏所有按钮
-            foreach (var buttonObject in button)
-            {
-                buttonObject.SetActive(false);
-            }
+                // 隐藏所有按钮
+                foreach (var buttonObject in button)
+                {
+                    buttonObject.SetActive(false);
+                }
                 countdownText.text = "Game Over!";
                 yield return new WaitForSeconds(3f);
                 countdownText.text ="";
@@ -89,9 +99,8 @@ public class npc2 : MonoBehaviour
                 break; // 结束游戏循环
             }
 
-            // 倒计时
-            yield return StartCoroutine(StartCountdown());
             question.text = "";
+
             // 更新题目
             UpdateQuestionObject();
             currentQuestionIndex++;
@@ -101,9 +110,9 @@ public class npc2 : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("door"))
         {
-            StartCoroutine(PlayAnimationAndWait());
+            //StartCoroutine(PlayAnimationAndWait());
             SceneManager.LoadScene("SampleScene");  
         }
     }
@@ -120,6 +129,7 @@ public class npc2 : MonoBehaviour
         // 确保当前的题目显示，其他题目隐藏
         if (currentQuestionIndex >= 0 && currentQuestionIndex < questionObjects.Length)
         {
+            Debug.Log("Index:" + currentQuestionIndex);
             // 隐藏所有题目
             foreach (var question in questionObjects)
             {
@@ -181,7 +191,8 @@ public class npc2 : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
-        
+        Debug.Log("countdown Index:" + currentQuestionIndex);
+
         //一開始的顯示
         if(currentQuestionIndex == 0)
         {
@@ -200,7 +211,6 @@ public class npc2 : MonoBehaviour
                 countdownText.fontSize = 100;
                 countdownText.text = "Wrong";
                 yield return new WaitForSeconds(1f);
-                countdownText.text = "Next Question";
                 ResetButtons();
             }
             else
@@ -224,16 +234,20 @@ public class npc2 : MonoBehaviour
                         countdownText.fontSize = 100;
                         countdownText.text = "Correct ";
                         yield return new WaitForSeconds(1f);
-                        countdownText.text = "Next Question";
+                        
                         
                     }else
                     {
                         countdownText.text = "Wrong";
                         yield return new WaitForSeconds(1f);
-                        countdownText.text = "Next Question";
+                        
                     }
                     
                 }
+            }
+            if(currentQuestionIndex < 3)
+            {
+                countdownText.text = "Next Question";
             }
         }
         
@@ -243,7 +257,7 @@ public class npc2 : MonoBehaviour
 
     bool  IsCorrect(GameObject button)
     {
-        string questionTag = questionObjects[currentQuestionIndex].tag;
+        string questionTag = questionObjects[currentQuestionIndex-1].tag;
         string buttonTag = button.tag;
         return questionTag == buttonTag;
     }
