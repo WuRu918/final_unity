@@ -164,6 +164,7 @@ namespace Flower{
         {
               specialCharFuncMap.Add(_str, _charFunction);
         }
+
         public void RegisterEffect(string effectName, EffectFunction effectFunction){
             effectMap.Add(effectName, effectFunction);
         }

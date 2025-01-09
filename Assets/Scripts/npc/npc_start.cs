@@ -29,7 +29,6 @@ public class npc_start : MonoBehaviour
         // 如果在对话模式下并且在范围内，按下Shift触发场景切换
         if (isInDialogMode && isInRange) 
         {
-            Debug.Log("確認好" );
             if(Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
             {
                 //fs.StartCoroutine(WaitForShiftAndLoadScene("YourSceneName"));
