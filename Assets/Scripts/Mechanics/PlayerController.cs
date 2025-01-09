@@ -162,6 +162,7 @@ namespace Platformer.Mechanics
             Landed
         }
 
+        /*
         void OnTriggerEnter2D(Collider2D coll)
         {
             if(coll.gameObject.tag == "npc")
@@ -170,5 +171,6 @@ namespace Platformer.Mechanics
             }
         
         }
+        */
     }
 }
