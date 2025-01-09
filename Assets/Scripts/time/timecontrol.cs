@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class timecontrol : MonoBehaviour
 {
     public int m_seconds;                 //倒數計時經換算的總秒數
-
+    public static bool enough_time = true;
     public int m_min;              //用於設定倒數計時的分鐘
     public int m_sec;              //用於設定倒數計時的秒數
 
@@ -50,7 +50,7 @@ public class timecontrol : MonoBehaviour
 
         // 使用 WaitForSecondsRealtime 而不是 WaitForSeconds 來等待真實時間
         yield return new WaitForSecondsRealtime(gameOverDelay);
-        
+        enough_time = false;
         // 切換場景
         SceneManager.LoadScene("result");
     }
