@@ -11,12 +11,13 @@ public class ballloon : MonoBehaviour
     public Animator bulloonAni;
     public bool canPlay = false;
     private Rigidbody2D rb; // 參考 Rigidbody2D 組件
-    private gamecontroller gameScript;
+    private gamecontroller gameController;
 
 
     void Start()
     {
         InitializeBalloon();
+        gameController = FindObjectOfType<gamecontroller>();
     }
 
 
@@ -43,7 +44,7 @@ public class ballloon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Bullet")
+        if (other.gameObject.tag == "Bullet"&& hp>0)
         {
             hp -= 1;
             Destroy(other.gameObject);
@@ -52,15 +53,12 @@ public class ballloon : MonoBehaviour
             float percent = (float)hp / (float)hp_max;
             float clampedPercent = Mathf.Max(percent, 0f);  // 確保血條百分比不會小於 0
             blood.transform.localScale = new Vector3(clampedPercent, blood.transform.localScale.y, blood.transform.localScale.z);
-            // 扣血就檢查一次
-            if (gameScript != null)
-            {
-                gameScript.CheckResult();
-            }
+
         }
        
         if (hp <= 0)
         {
+            gameController.CheckResult();
             bulloonAni.SetTrigger("boom_trigger");
             var audio = this.GetComponent<AudioSource>();
             // 播放音效
@@ -85,7 +83,7 @@ public class ballloon : MonoBehaviour
     {
         //隨機生成
         float randomX = Random.Range(-7.85f, 1.70f);
-        this.transform.position = new Vector3(randomX, 6.22f, this.transform.position.z);
+        this.transform.position = new Vector3(randomX, 1.70f, this.transform.position.z);
 
         hp_max = 2; // 氣球最大血量
         hp = hp_max; // 初始血量

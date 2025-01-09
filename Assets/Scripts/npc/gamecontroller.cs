@@ -15,6 +15,7 @@ public class gamecontroller : MonoBehaviour
     private Vector3 countdownPosition;
     public int countdownTime = 3; // 秒數
     public GameObject door;
+    bool next = true;
 
     void Start()
     {
@@ -41,8 +42,9 @@ public class gamecontroller : MonoBehaviour
     
     IEnumerator GameLoop()
     {   
-        while (currentQuestionIndex <= questionObjects.Length)
+        while (next && currentQuestionIndex <= questionObjects.Length)
         {
+            next = false;
             Debug.Log("當前題號"+currentQuestionIndex);
             // 如果题目索引超出范围，表示游戏结束
             if (currentQuestionIndex >= questionObjects.Length)
@@ -243,14 +245,18 @@ public class gamecontroller : MonoBehaviour
             if (pinkScript != null)//pink balloon
             {
                 hp = pinkScript.GetHP();
+                Debug.Log("pink"+hp);
             }
             else if (blackScript != null)//black balloon
             {
                 hp = blackScript.GetHP();
+                Debug.Log("black"+hp);
             }
             else if (ballloonScript != null)//orange balloon
             {
                 hp = ballloonScript.GetHP();
+                Debug.Log("orange"+hp);
+                
             }
             else
             {
@@ -258,9 +264,11 @@ public class gamecontroller : MonoBehaviour
                 continue;
             }
 
+            
             // 判断該氣球是否被擊中
-            if (hp <= 0) // 如果气球血量为0或以下
+            if (hp == 0) // 如果气球血量为0或以下
             {
+                Debug.Log("有人ｈｐ=0");
                 // 判断是否答对
                 if (IsCorrectAnswer(balloon))
                 {
@@ -287,8 +295,9 @@ public class gamecontroller : MonoBehaviour
                     ballloonScript.HideBalloon();
                 }
                 allBalloonsHidden = false;
-                 yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(2f);
                 countdownText.text = "Next Question !";
+                next = true ;
                 StartCoroutine(GameLoop());
             }
         }
@@ -312,5 +321,6 @@ public class gamecontroller : MonoBehaviour
         // 比较题目tag和被射掉的气球tag
         return questionTag == balloonTag;
     }
+
 
 }
