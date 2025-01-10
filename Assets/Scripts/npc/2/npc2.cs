@@ -34,7 +34,7 @@ public class npc2 : MonoBehaviour
         playerController.maxSpeed= 0; 
 
         //question.text = "Select the correct option to earn coins (2 coins per question)";
-        countdownText.fontSize = 100;
+        countdownText.fontSize = 200;
         countdownText.text = "Ready!";
 
         // 隐藏所有题目
@@ -138,7 +138,7 @@ public class npc2 : MonoBehaviour
 
             // 只显示当前的题目
             questionObjects[currentQuestionIndex].SetActive(true);
-            questionObjects[currentQuestionIndex].transform.position = new Vector3(1200f,1270f,0);
+            questionObjects[currentQuestionIndex].transform.position = new Vector3(1400f,1270f,0);
         }
         else
         {
@@ -196,7 +196,7 @@ public class npc2 : MonoBehaviour
         //一開始的顯示
         if(currentQuestionIndex == 0)
         {
-            countdownText.fontSize = 150;
+            countdownText.fontSize = 200;
             countdownText.text = "Go ! ";
         }
 
@@ -208,7 +208,7 @@ public class npc2 : MonoBehaviour
                 {
                     buttonObject.GetComponent<Button>().interactable = false; 
                 }
-                countdownText.fontSize = 100;
+                countdownText.fontSize = 200;
                 countdownText.text = "Wrong";
                 yield return new WaitForSeconds(1f);
                 ResetButtons();
@@ -231,7 +231,7 @@ public class npc2 : MonoBehaviour
             
                     if(IsCorrect(selectedButton))
                     {
-                        countdownText.fontSize = 100;
+                        countdownText.fontSize = 200;
                         countdownText.text = "Correct ";
                         CoinManager.currentGoldCoins += 2;
                         yield return new WaitForSeconds(1f);
@@ -239,6 +239,7 @@ public class npc2 : MonoBehaviour
                         
                     }else
                     {
+                        countdownText.fontSize = 200;
                         countdownText.text = "Wrong";
                         yield return new WaitForSeconds(1f);
                         
@@ -248,6 +249,7 @@ public class npc2 : MonoBehaviour
             }
             if(currentQuestionIndex < 3)
             {
+                countdownText.fontSize = 170;
                 countdownText.text = "Next Question";
             }
         }
@@ -289,5 +291,12 @@ public class npc2 : MonoBehaviour
         
         // 重置选中按钮的索引
         selectedButtonIndex = -1;
+    }
+
+    public void Button_sound()
+    {
+        var audio = this.GetComponent<AudioSource>();
+        //
+        audio.Play();
     }
 }

@@ -784,7 +784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 397, y: -239}
+  m_AnchoredPosition: {x: 516.61, y: -241.5}
   m_SizeDelta: {x: 612.0001, y: 244.5438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401192934
@@ -839,6 +839,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1610689138}
+        m_TargetAssemblyTypeName: npc2, Assembly-CSharp
+        m_MethodName: Button_sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1138,7 +1150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44, y: 537.27}
+  m_AnchoredPosition: {x: 167, y: 537.27}
   m_SizeDelta: {x: 1491.6323, y: 236.5745}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767192425
@@ -1491,6 +1503,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1610689144}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 9656f404a07bdb94aa053cbdcd5e5927,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610689145}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 9656f404a07bdb94aa053cbdcd5e5927,
     type: 3}
 --- !u!1 &979205896
@@ -2020,7 +2036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.00003, y: 890.18994}
+  m_AnchoredPosition: {x: 167.00003, y: 890.18994}
   m_SizeDelta: {x: 1356.8436, y: 274.5242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1149338918
@@ -2283,7 +2299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -478, y: -239}
+  m_AnchoredPosition: {x: -323.32, y: -239}
   m_SizeDelta: {x: 646.6328, y: 249.5507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490282695
@@ -2338,6 +2354,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1610689138}
+        m_TargetAssemblyTypeName: npc2, Assembly-CSharp
+        m_MethodName: Button_sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2802,6 +2830,103 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.24, y: 0.46}
   m_EdgeRadius: 0
+--- !u!82 &1610689145
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610689137}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 64c7bcc3acc2047d58236bcbab16cff6, type: 3}
+  m_Resource: {fileID: 8300000, guid: 64c7bcc3acc2047d58236bcbab16cff6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1628493999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,7 +2996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 94.093, y: 1267.19}
+  m_AnchoredPosition: {x: 184.3, y: 1267.19}
   m_SizeDelta: {x: 1457.0293, y: 273.0297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1680439601
@@ -2948,7 +3073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 393.87, y: 165.37}
+  m_AnchoredPosition: {x: 513.48, y: 165.37}
   m_SizeDelta: {x: 618.26, y: 264.0641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765341546
@@ -3003,6 +3128,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1610689138}
+        m_TargetAssemblyTypeName: npc2, Assembly-CSharp
+        m_MethodName: Button_sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3080,7 +3217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -474.79, y: 162}
+  m_AnchoredPosition: {x: -320.11, y: 168.74}
   m_SizeDelta: {x: 653.0486, y: 257.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1942308862
@@ -3131,6 +3268,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: npc2, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1610689138}
+        m_TargetAssemblyTypeName: npc2, Assembly-CSharp
+        m_MethodName: Button_sound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3354,8 +3503,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 839.27, y: -454}
-  m_SizeDelta: {x: 677.5508, y: 50.6443}
+  m_AnchoredPosition: {x: 879, y: -539.9429}
+  m_SizeDelta: {x: 1554.0029, y: 219.4494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2073598302
 CanvasRenderer:
