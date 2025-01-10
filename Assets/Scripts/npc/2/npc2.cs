@@ -233,6 +233,7 @@ public class npc2 : MonoBehaviour
                     {
                         countdownText.fontSize = 100;
                         countdownText.text = "Correct ";
+                        CoinManager.currentGoldCoins += 2;
                         yield return new WaitForSeconds(1f);
                         
                         

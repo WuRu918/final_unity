@@ -15,6 +15,8 @@ namespace Platformer.Mechanics
     /// </summary>
     public class PlayerController : KinematicObject
     {
+        public static bool hasSavedPosition = false; // 確保只有在有保存位置時才使用
+        public static Vector3 savedPosition = Vector3.zero; // 預設位置
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;

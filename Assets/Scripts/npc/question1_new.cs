@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System;
 using TMPro; // for TMP_Text
+using Platformer.Mechanics;
 
 public class question1_new: MonoBehaviour
 {
     public GameObject text; // 顯示遊戲說明
     bool isInRange = false;       // 判断玩家是否处于特定区域内
+    private Transform playerTransform;  // 儲存玩家的 Transform
 
 
 
@@ -31,9 +33,13 @@ public class question1_new: MonoBehaviour
         {
             if(Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
             {       
-                Debug.Log("here");   
-                // 場景加載
-                SceneManager.LoadScene("scene1");
+                if (playerTransform != null)
+                {
+                    // 場景加載
+                    PlayerController.savedPosition = playerTransform.position;
+                    PlayerController.hasSavedPosition = true;
+                    SceneManager.LoadScene("scene1");
+                }
 
             }          
         }
@@ -47,6 +53,7 @@ public class question1_new: MonoBehaviour
         {
             // 玩家进入对话范围，启动对话
             isInRange = true;
+            playerTransform = other.transform; 
             text.SetActive(true);
         }
     }
@@ -58,6 +65,7 @@ public class question1_new: MonoBehaviour
         {
             // 玩家離開範圍
             isInRange = false;
+            playerTransform = null;
             text.SetActive(false);
         }
     }
