@@ -8,6 +8,7 @@ public class back_to_main : MonoBehaviour
     {
         SceneManager.LoadScene("start_2"); 
         CoinManager.currentGoldCoins = 0;
+        
     }
 
     
