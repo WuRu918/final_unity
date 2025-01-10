@@ -5,13 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class To_result : MonoBehaviour
 {
+    private timecontrol timeControlScript;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("¨ì¹FºX¤l¡I¤Á´«³õ´º¤¤...");
-            // ª±®a¸I¨ìºX¼m«á¤Á´«¨ì¤U¤@­Ó³õ´º
+            Debug.Log("ï¿½ï¿½Fï¿½Xï¿½lï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...");
+            // ï¿½ï¿½ï¿½aï¿½Iï¿½ï¿½Xï¿½mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Uï¿½@ï¿½Ó³ï¿½ï¿½ï¿½
             SceneManager.LoadScene("result");  
+            timecontrol timeControlScript = GameObject.Find("YourGameObjectName").GetComponent<timecontrol>();
+            int seconds = timeControlScript.m_seconds;  // è·å– m_seconds
+            int minutes = timeControlScript.m_min;      // è·å– m_min
+            int secondsInMin = timeControlScript.m_sec; // è·å– m_sec
+
+            seconds = 0;
+            minutes = 3;
+            secondsInMin = 0;
         }
     }
 }
