@@ -74,9 +74,11 @@ public class control : MonoBehaviour
                 {
                     x.SetActive(false);
                 }
-
+                countdownText.fontSize = 250;
+                countdownText.transform.position = new Vector3(countdownPosition.x - 300f, countdownPosition.y+100f, countdownPosition.z);
                 countdownText.text = "Game Over!";
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(1.5f);
+                countdownText.text = "Go Left To Leave !";
                 Debug.Log("遊戲結束，最終分數: " + score);
                 door.SetActive(true);
                 yield break; // 結束遊戲
@@ -123,23 +125,24 @@ public class control : MonoBehaviour
 
     private IEnumerator StartCountdown()
     {
-        countdownText.fontSize = 300;
+        countdownText.fontSize = 250;
         countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
         countdownText.text = "Ready!";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         // 倒計時
         while (countdownTime > 0)
         {
-            countdownText.transform.position = new Vector3(countdownPosition.x, countdownPosition.y, countdownPosition.z);
-            countdownText.fontSize = 500;
+            countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
+        countdownText.text = "Ready!";
+            countdownText.fontSize = 400;
             countdownText.text = countdownTime.ToString();
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
 
         countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
-        countdownText.fontSize = 380;
+        countdownText.fontSize = 400;
         countdownText.text = "Go!";
         yield return new WaitForSeconds(1f);
 
@@ -179,7 +182,10 @@ public class control : MonoBehaviour
             }
         }
 
-        while (countdownTime > 0 && !next)
+        countdownText.fontSize = 230;
+        countdownText.transform.position = new Vector3(countdownPosition.x - 600f, countdownPosition.y+450f, countdownPosition.z);
+
+        while (countdownTime >= 0 && !next)
         {
             countdownText.text = countdownTime.ToString();
             CheckResult();
@@ -192,7 +198,7 @@ public class control : MonoBehaviour
             balloon.SetActive(false);
         }
 
-        yield return new WaitForSeconds(1f); // 過渡時間
+        yield return new WaitForSeconds(0.5f); // 過渡時間
     }
 
     void CheckResult()
@@ -208,12 +214,14 @@ public class control : MonoBehaviour
                 anyBalloonHit = true;
                 if (IsCorrectAnswer(balloons[i]))
                 {
+                    countdownText.fontSize = 200;
                     countdownText.text = "Correct!";
                     score++;
                     CoinManager.currentGoldCoins += 2;
                 }
                 else
                 {
+                    countdownText.fontSize = 200;
                     countdownText.text = "Wrong!";
                 }
                 next = true;
@@ -221,8 +229,9 @@ public class control : MonoBehaviour
             }
         }
 
-        if (!anyBalloonHit && countdownTime == 1)
+        if (!anyBalloonHit && countdownTime < 1)
         {
+            countdownText.fontSize = 200;
             countdownText.text = "No Answer";
             next = true;
         }
