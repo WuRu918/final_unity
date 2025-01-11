@@ -2,6 +2,7 @@ using Platformer.Core;
 using Platformer.Gameplay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Platformer.Mechanics;
 
 public class To_result : MonoBehaviour
 {
@@ -11,8 +12,7 @@ public class To_result : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("��F�X�l�I����������...");
-            // ���a�I��X�m�������U�@�ӳ���
+            PlayerController.savedPosition = new Vector3(10f,0.22f,1f);
             SceneManager.LoadScene("result");  
             timecontrol timeControlScript = GameObject.Find("YourGameObjectName").GetComponent<timecontrol>();
             int seconds = timeControlScript.m_seconds;  // 获取 m_seconds
@@ -21,7 +21,8 @@ public class To_result : MonoBehaviour
 
             seconds = 0;
             minutes = 3;
-            secondsInMin = 0;
+            secondsInMin = 0;     
+
         }
     }
 }

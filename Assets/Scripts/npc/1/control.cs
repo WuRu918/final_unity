@@ -128,7 +128,7 @@ public class control : MonoBehaviour
         
         //countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
         countdownText.text = "Ready!";
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
 
         // 倒計時
         while (countdownTime > 0)
