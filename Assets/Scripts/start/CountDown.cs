@@ -58,7 +58,7 @@ public class CountdownTimer : MonoBehaviour
                 // 播放音效
                 audioSource.Play();
                 // 如果倒數到 3，移動文字位置並放大
-                countdownRectTransform.anchoredPosition = new Vector2(currentPosition.x + 400, currentPosition.y + 50);
+                //countdownRectTransform.anchoredPosition = new Vector2(currentPosition.x + 400, currentPosition.y + 50);
                 countdownText.fontSize = originalFontSize * 1.3f;
             }
 
@@ -69,7 +69,7 @@ public class CountdownTimer : MonoBehaviour
 
         // 倒數結束，顯示 "Go!"
         countdownText.text = "Go!";
-        countdownRectTransform.anchoredPosition = new Vector2(currentPosition.x + 300, currentPosition.y + 50);
+        //countdownRectTransform.anchoredPosition = new Vector2(currentPosition.x + 300, currentPosition.y + 50);
         countdownText.fontSize = originalFontSize * 1.2f;
 
         yield return new WaitForSeconds(0.3f); // 顯示 "Go!" 的時間

@@ -27,14 +27,16 @@ public class npc2 : MonoBehaviour
 
     private int currentQuestionIndex = 0; // 当前题目索引
     public int score = 0;  // 添加分数变量
+    public float y;
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         playerController.maxSpeed= 0; 
+        y=this.transform.position.y;
+        
 
         //question.text = "Select the correct option to earn coins (2 coins per question)";
-        countdownText.fontSize = 200;
         countdownText.text = "Ready!";
 
         // 隐藏所有题目
@@ -87,6 +89,7 @@ public class npc2 : MonoBehaviour
                 {
                     buttonObject.SetActive(false);
                 }
+                countdownText.transform.position = new Vector3(this.transform.position.x+3,y+2,0);
                 countdownText.text = "Game Over!";
                 yield return new WaitForSeconds(3f);
                 countdownText.text ="";
@@ -138,7 +141,7 @@ public class npc2 : MonoBehaviour
 
             // 只显示当前的题目
             questionObjects[currentQuestionIndex].SetActive(true);
-            questionObjects[currentQuestionIndex].transform.position = new Vector3(1400f,1270f,0);
+            //questionObjects[currentQuestionIndex].transform.position = new Vector3(1400f,1270f,0);
         }
         else
         {
@@ -183,7 +186,6 @@ public class npc2 : MonoBehaviour
     private IEnumerator StartCountdown()
     {
         countdownTime = 5;
-        countdownText.fontSize = 250;
 
         while (countdownTime >0)
         {
@@ -196,7 +198,6 @@ public class npc2 : MonoBehaviour
         //一開始的顯示
         if(currentQuestionIndex == 0)
         {
-            countdownText.fontSize = 200;
             countdownText.text = "Go ! ";
         }
 
@@ -208,7 +209,6 @@ public class npc2 : MonoBehaviour
                 {
                     buttonObject.GetComponent<Button>().interactable = false; 
                 }
-                countdownText.fontSize = 200;
                 countdownText.text = "Wrong";
                 yield return new WaitForSeconds(1f);
                 ResetButtons();
@@ -231,7 +231,7 @@ public class npc2 : MonoBehaviour
             
                     if(IsCorrect(selectedButton))
                     {
-                        countdownText.fontSize = 200;
+                        
                         countdownText.text = "Correct ";
                         CoinManager.currentGoldCoins += 2;
                         yield return new WaitForSeconds(1f);
@@ -239,7 +239,7 @@ public class npc2 : MonoBehaviour
                         
                     }else
                     {
-                        countdownText.fontSize = 200;
+                        
                         countdownText.text = "Wrong";
                         yield return new WaitForSeconds(1f);
                         
@@ -249,8 +249,8 @@ public class npc2 : MonoBehaviour
             }
             if(currentQuestionIndex < 3)
             {
-                countdownText.fontSize = 170;
-                countdownText.text = "Next Question";
+                
+                countdownText.text = " Next Question";
             }
         }
         

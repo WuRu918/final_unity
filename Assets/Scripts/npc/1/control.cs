@@ -74,8 +74,8 @@ public class control : MonoBehaviour
                 {
                     x.SetActive(false);
                 }
-                countdownText.fontSize = 250;
-                countdownText.transform.position = new Vector3(countdownPosition.x - 300f, countdownPosition.y+100f, countdownPosition.z);
+                countdownText.fontSize = 0.5f;
+                //countdownText.transform.position = new Vector3(countdownPosition.x - 300f, countdownPosition.y+100f, countdownPosition.z);
                 countdownText.text = "Game Over!";
                 yield return new WaitForSeconds(1.5f);
                 countdownText.text = "Go Left To Leave !";
@@ -125,24 +125,22 @@ public class control : MonoBehaviour
 
     private IEnumerator StartCountdown()
     {
-        countdownText.fontSize = 250;
-        countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
+        
+        //countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
         countdownText.text = "Ready!";
         yield return new WaitForSeconds(1.5f);
 
         // 倒計時
         while (countdownTime > 0)
         {
-            countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
-        countdownText.text = "Ready!";
-            countdownText.fontSize = 400;
+            //countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
+            countdownText.text = "Ready!";
             countdownText.text = countdownTime.ToString();
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
 
-        countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
-        countdownText.fontSize = 400;
+        //countdownText.transform.position = new Vector3(countdownPosition.x - 200f, countdownPosition.y, countdownPosition.z);
         countdownText.text = "Go!";
         yield return new WaitForSeconds(1f);
 
@@ -182,8 +180,7 @@ public class control : MonoBehaviour
             }
         }
 
-        countdownText.fontSize = 230;
-        countdownText.transform.position = new Vector3(countdownPosition.x - 600f, countdownPosition.y+450f, countdownPosition.z);
+        //countdownText.transform.position = new Vector3(countdownPosition.x - 600f, countdownPosition.y+450f, countdownPosition.z);
 
         while (countdownTime >= 0 && !next)
         {
@@ -214,14 +211,13 @@ public class control : MonoBehaviour
                 anyBalloonHit = true;
                 if (IsCorrectAnswer(balloons[i]))
                 {
-                    countdownText.fontSize = 200;
                     countdownText.text = "Correct!";
                     score++;
                     CoinManager.currentGoldCoins += 2;
                 }
                 else
                 {
-                    countdownText.fontSize = 200;
+                    
                     countdownText.text = "Wrong!";
                 }
                 next = true;
@@ -231,7 +227,7 @@ public class control : MonoBehaviour
 
         if (!anyBalloonHit && countdownTime < 1)
         {
-            countdownText.fontSize = 200;
+           
             countdownText.text = "No Answer";
             next = true;
         }

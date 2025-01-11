@@ -6,28 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/start.unity
-    guid: e79afd5ce61bf4a899e01766b044a990
+    path: Assets/Scenes/start_2.unity
+    guid: fb6fbd4d14e94464fba992486e072699
   - enabled: 1
     path: Assets/Scenes/explaination.unity
     guid: 5c51fbf16f8d940299ee68ba6524fffa
   - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/answer_question.unity
     guid: aa8acd4c9f5884144ab934f47272da8d
   - enabled: 1
-    path: Assets/Scenes/result.unity
-    guid: 57f3d8f4e8fc4fc4782f16e4d42ed7a1
-  - enabled: 1
-    path: Assets/Scenes/start_2.unity
-    guid: fb6fbd4d14e94464fba992486e072699
+    path: Assets/Scenes/scene1.unity
+    guid: 6e36d9cfcbc8d4273b96b79227dc709b
   - enabled: 1
     path: Assets/Scenes/scene2.unity
     guid: fa828f42cd3244afe9184442340de32e
   - enabled: 1
-    path: Assets/Scenes/scene1.unity
-    guid: 6e36d9cfcbc8d4273b96b79227dc709b
+    path: Assets/Scenes/result.unity
+    guid: 57f3d8f4e8fc4fc4782f16e4d42ed7a1
+  - enabled: 0
+    path: Assets/Scenes/start.unity
+    guid: e79afd5ce61bf4a899e01766b044a990
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
