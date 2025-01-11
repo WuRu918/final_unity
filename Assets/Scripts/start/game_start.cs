@@ -22,7 +22,6 @@ public class GameExplaination : MonoBehaviour
         yield return new WaitForSeconds(audio.clip.length);
 
         // 切換場景
-        Debug.Log("Switching Scene...");
         SceneManager.LoadScene("explaination");
     }
 }

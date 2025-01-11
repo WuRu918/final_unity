@@ -12,41 +12,12 @@ public class timecontrol : MonoBehaviour
     public int m_sec;              //用於設定倒數計時的秒數
 
     public Text m_timer;           //設定畫面倒數計時的文字
-    //public GameObject m_gameOver;  //設定 GAME OVER 物件
+    public GameObject m_gameOver;  //設定 GAME OVER 物件
     public float gameOverDelay = 2f;     // 設置 Game Over 顯示的延遲時間
 
     void Start()
     {
         StartCoroutine(Countdown());   //呼叫倒數計時的協程
-        SceneManager.sceneLoaded += OnSceneLoaded; 
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "sampleScene")
-        {
-            ResetTimer();
-            StartCoroutine(Countdown());
-        }
-
-        // 如果進入 result 場景，隱藏倒數計時
-        /*
-        if (scene.name == "result")
-        {
-            StopAllCoroutines(); // 停止倒數計時
-            m_timer.gameObject.SetActive(false);  // 隱藏倒數計時文字
-        }
-        */
-
-
-
-    }
-
-    void ResetTimer()
-    {
-        m_seconds = (m_min * 60) + m_sec; // 重置秒數
-        m_timer.text = string.Format("TIME: {0}:{1}", m_min.ToString("00"), m_sec.ToString("00"));
-        enough_time = true;  // 重置計時狀態
     }
 
     IEnumerator Countdown()
@@ -74,12 +45,12 @@ public class timecontrol : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);   //時間結束時，顯示 00:00 停留一秒
+        m_gameOver.SetActive(true);           //時間結束時，畫面出現 GAME OVER
         Time.timeScale = 0;                   //時間結束時，控制遊戲暫停無法操作
 
         // 使用 WaitForSecondsRealtime 而不是 WaitForSeconds 來等待真實時間
         yield return new WaitForSecondsRealtime(gameOverDelay);
         enough_time = false;
-
         // 切換場景
         SceneManager.LoadScene("result");
     }
