@@ -4,7 +4,7 @@
 ## Category
 - School Life
 - Unity 2d platform game
-- ![ppt] (ppt/WindowProgramming_Final.pdf)
+[ppt] (ppt/WindowProgramming_Final.pdf)
 
 ### Game Engine
 - Unity 2D
