@@ -47,7 +47,7 @@ through a game that captures the excitement of grabbing food and racing against 
 ### - Endings
 - Win condition
   - Reach the destination with enough coins(1) in limited time(2)
-- Loss condition
+- Lose condition
   - Unsatisfied the above conditions(1)(2)
 - One good and two bad endings
 
