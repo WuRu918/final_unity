@@ -24,7 +24,7 @@ Not only is it difficult to decide what to eat, but sometimes it’s unavoidable
 through a game that captures the excitement of grabbing food and racing against time during lunch.
 
 ### - Characteristics
-- 2d parkour
+- 2d pixels parkour
 - Extra mini games
   - tasks from NPCs
 - Map
