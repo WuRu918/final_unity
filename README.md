@@ -1,10 +1,11 @@
 # [113_1 Window Programming] Final Group Project
 ---
+[Window Programming Final Report](ppt/WindowProgramming_Final.pdf)
 ---
 ## Category
 - School Life
 - Unity 2d platform game
-[ppt] (ppt/WindowProgramming_Final.pdf)
+
 
 ### Game Engine
 - Unity 2D
