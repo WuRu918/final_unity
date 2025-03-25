@@ -29,7 +29,7 @@ through a game that captures the excitement of grabbing food and racing against 
   - tasks from NPCs
 - Map
   - References from our school NCKU (buildings, environment, ...) 
-  - Self-produce art work
+  - Most self-produce art work, except animations
   - Hidden areas
 - Multi-paths
 - Multi-endings
