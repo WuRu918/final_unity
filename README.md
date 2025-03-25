@@ -1,10 +1,10 @@
 # [113_1 Window Programming] Final Group Project
 ---
-![ppt] (ppt/視窗程式設計 期末專題報告.pdf)
 ---
 ## Category
 - School Life
 - Unity 2d platform game
+- ![ppt] (ppt/視窗程式設計 期末專題報告.pdf)
 
 ### Game Engine
 - Unity 2D
