@@ -1,6 +1,6 @@
 # [113_1 Window Programming] Final Group Project
 ---
-[Window Programming Final Report](ppt/WindowProgramming_Final.pdf)
+-[Window Programming Final PPT(CN)](ppt/WindowProgramming_Final.pdf)
 ---
 ## Category
 - School Life
