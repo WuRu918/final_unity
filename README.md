@@ -1,6 +1,6 @@
 # [113_1 Window Programming] Final Group Project
 ---
-[Github.com](ppt/視窗程式設計 期末專題報告.pdf)
+![ppt](ppt/視窗程式設計 期末專題報告.pdf)
 ---
 ## Category
 - School Life
