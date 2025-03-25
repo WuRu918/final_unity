@@ -3,6 +3,9 @@
 - School Life
 - Unity 2d platform game
 
+### Game Engine
+- Unity 2D
+
 ## Brief Introduction
 ### Why we do - School Life "Food Rush Challenge"
 - This is the final-term group project, there are several categories can choose such as:
@@ -50,6 +53,3 @@ through a game that captures the excitement of grabbing food and racing against 
 - Lose condition
   - Unsatisfied the above conditions(1)(2)
 - One good and two bad endings
-
-### Platform
-- Unity 2D
